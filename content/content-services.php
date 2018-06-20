@@ -19,7 +19,6 @@
 
 	<?php endif; ?>
 </a>
-<!-- <img src="assets/dist/img/sm-1.svg" alt="Roofing" class="three-col-icon-info__img"> -->
 <div class="three-col-icon-info__info">
 	<a href="<?php the_permalink( ); ?>" class="">
 		<h3 class="three-col-icon-info__title"><?php the_title(); ?></h3>

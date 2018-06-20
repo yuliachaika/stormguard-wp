@@ -20,19 +20,11 @@
 
 			query_posts($args);
 
-			if ( have_posts() ) : ?>
-
-			<?php
-			while ( have_posts() ) :
+			while(have_posts()){
 				the_post();
-
-			get_template_part( 'content/content-slides', get_post_type() );
-
-			endwhile;
-
-			endif;
+				get_template_part( 'content/content-slides', get_post_type() );
+			}               
 			?>
-
 
 		</div>
 		<!-- /.slider -->

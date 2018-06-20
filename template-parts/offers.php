@@ -15,27 +15,17 @@
 
 		<div class="main-info__content three-col-img-link">
 			<div class="three-col-img-link__wrap">
-
 				<?php 
 				$args = array(
 					'post_type' => 'offers',
-					'publish' => true,
-					'paged' => get_query_var('paged'),
 					);
 
 				query_posts($args);
 
-				if ( have_posts() ) : ?>
-
-				<?php
-				while ( have_posts() ) :
+				while(have_posts()){
 					the_post();
-
-				get_template_part( 'content/content-offers', get_post_type() );
-
-				endwhile;
-
-				endif;
+					get_template_part( 'content/content-offers', get_post_type() );
+				}				
 				?>
 
 			</div>

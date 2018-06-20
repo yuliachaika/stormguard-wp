@@ -6,8 +6,13 @@
 
 ?>
 
-<div class="gallery__item">
-	<a href="#" class="gallery__link">
+<div class="gallery__item" style="background-image: url(<?php 
+   $image = get_field('image');
+    if ( !empty($image)) {
+      echo $image['url'];   
+    }
+  ?>)">
+	<a href="<?php the_permalink(); ?>" class="gallery__link">
 		<?php 
 
 		$image = get_field('image');

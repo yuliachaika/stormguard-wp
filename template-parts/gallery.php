@@ -17,9 +17,7 @@
 			<?php 
 			$args = array(
 				'post_type' => 'gallery',
-				'publish' => true,
 				'posts_per_page' => 8,
-				'paged' => get_query_var('paged'),
 				);
 
 			query_posts($args);
@@ -39,7 +37,7 @@
 
 
 		</div>
-		<a class="gallery__btn" href="<?php echo esc_url( home_url( '/photo-gallery' ));?>">View more photos</a>
+		<a class="gallery__btn" href="<?php echo esc_url( home_url( '/galleries' ));?>">View more photos</a>
 	</div>
 </div>
 <!-- /.gallery -->

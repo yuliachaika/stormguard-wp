@@ -20,7 +20,7 @@
 		<a href="<?php the_permalink( ); ?>" class="">
 			<h2 class="post__title"><?php the_title(); ?></h2>
 		</a>
-		<p class="post__text"><?php the_excerpt(); ?></p>
+		<div class="post__text"><?php the_content('read more'); ?></div>
 	</div>
 	<?php 
 

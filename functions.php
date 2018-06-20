@@ -40,59 +40,10 @@ add_action('after_setup_theme', function(){
   ) );
 });
 
-
-/**
- * single.php
- */
-define( SINGLE_PATH, TEMPLATEPATH . '/single' );
-
-add_filter( 'single_template', 'my_single_template' );
-
-remove_filter( 'the_content', 'wpautop' );
-remove_filter( 'the_excerpt', 'wpautop' );
-
-function my_single_template( $single ) {
-  global $wp_query, $post;
-
-if ( file_exists( SINGLE_PATH . '/single-' . $post->ID . '.php' ) ) {
-  return SINGLE_PATH . '/single-' . $post->ID . '.php';
-}
-
-foreach ( (array) get_the_category() as $cat ) :
-
-  if ( file_exists( SINGLE_PATH . '/single-cat-' . $cat->slug . '.php' ) ) {
-    return SINGLE_PATH . '/single-cat-' . $cat->slug . '.php';
-  } elseif ( file_exists( SINGLE_PATH . '/single-cat-' . $cat->term_id . '.php' ) ) {
-    return SINGLE_PATH . '/single-cat-' . $cat->term_id . '.php';
-  }
-
-  endforeach;
-
-$wp_query->in_the_loop = true;
-foreach ( (array) get_the_tags() as $tag ) :
-
-  if ( file_exists( SINGLE_PATH . '/single-tag-' . $tag->slug . '.php' ) ) {
-    return SINGLE_PATH . '/single-tag-' . $tag->slug . '.php';
-  } elseif ( file_exists( SINGLE_PATH . '/single-tag-' . $tag->term_id . '.php' ) ) {
-    return SINGLE_PATH . '/single-tag-' . $tag->term_id . '.php';
-  }
-
-endforeach;
-$wp_query->in_the_loop = false;
-
-if ( file_exists( SINGLE_PATH . '/single.php' ) ) {
-  return SINGLE_PATH . '/single.php';
-  }
-  return $single;
-}
-
-
 /*
 * Enable support for Post Thumbnails on posts and pages.
 */
 add_theme_support( 'post-thumbnails' ); 
-
-
 
 /*
 * Add filters to remove br & span tags.
@@ -105,19 +56,26 @@ return $content;
 add_filter( 'wpcf7_autop_or_not', '__return_false' );
 
 
+/*
+* Add Theme Options to Stormguard theme.
+*/
+require get_template_directory() . '/settings.php';
 
-/* Modify the read more link on the_excerpt() */
- 
-function et_excerpt_length($length) {
-    return 75;
-}
-add_filter('excerpt_length', 'et_excerpt_length');
- 
-/* Add a link  to the end of our excerpt contained in a div for styling purposes and to break to a new line on the page.*/
- 
-function et_excerpt_more($more) {
-    global $post;
-    return '<div class="view-full-post"><a href="'. get_permalink($post->ID) . '" class="post__text post__text--link">Read More</a></div>';
-}
-add_filter('excerpt_more', 'et_excerpt_more');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
