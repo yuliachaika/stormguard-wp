@@ -8,8 +8,8 @@
 <section class="main-offers">
 	<div class="container">
 		<div class="main-offers__title title-text title-text--center">
-			<h2 class="title-text__title"><?php echo get_cat_name(5); ?></h2>
-			<div class="title-text__text title-text__text--center"><?php echo category_description(5); ?></div>
+			<h2 class="title-text__title"><?= get_field('offers_title', 'option'); ?></h2>
+			<div class="title-text__text title-text__text--center"><?= get_field('offers_descr', 'option'); ?></div>
 		</div>
 		<!-- /.title-text -->
 
@@ -20,12 +20,14 @@
 					'post_type' => 'offers',
 					);
 
+				
 				query_posts($args);
 
 				while(have_posts()){
 					the_post();
 					get_template_part( 'content/content-offers', get_post_type() );
-				}				
+				}		
+
 				?>
 
 			</div>

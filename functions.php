@@ -3,6 +3,7 @@
  * StormGuard functions and definitions
  */
 
+
 function register__styles() {
 	
   wp_register_style('style', get_template_directory_uri() . 
@@ -59,23 +60,32 @@ add_filter( 'wpcf7_autop_or_not', '__return_false' );
 /*
 * Add Theme Options to Stormguard theme.
 */
-require get_template_directory() . '/settings.php';
 
 
+if( function_exists('acf_add_options_page') ) {
+  
+  acf_add_options_page(array(
+    'page_title'  => 'Theme General Settings',
+    'menu_title'  => 'Theme Options',
+    'menu_slug'   => 'theme-general-settings',
+    'capability'  => 'edit_posts',
+    'redirect'    => false,
+    'position'    => 22,
+    'icon_url' => 'dashicons-admin-appearance', 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  ));
+  
+  acf_add_options_sub_page(array(
+    'page_title'  => 'Theme Header Settings',
+    'menu_title'  => 'Header',
+    'parent_slug' => 'theme-general-settings',
+  ));
+  
+  acf_add_options_sub_page(array(
+    'page_title'  => 'Theme Footer Settings',
+    'menu_title'  => 'Footer',
+    'parent_slug' => 'theme-general-settings',
+  ));
+  
+}
 

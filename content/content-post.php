@@ -22,19 +22,9 @@
 		</a>
 		<div class="post__text"><?php the_content('read more'); ?></div>
 	</div>
-	<?php 
 
-	$author = get_field('author');
-
-	if( $author ): ?>
-		
-		<p class="post__author">By&nbsp;<?php echo $author; ?></p>
-
-	<?php endif; ?>
+		<p class="post__author">By&nbsp;<?php the_author(); ?></p>
 	
 </div>
 <!-- /. post -->
-
-
-
 

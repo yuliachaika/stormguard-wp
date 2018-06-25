@@ -38,7 +38,7 @@ get_header();
 
 					if( !empty($author) ): ?>
 
-					<p class="about__info about__info--author"><?php the_field('author'); ?></p>
+					<p class="about__info about__info--author"><?php the_author(); ?></p>
 					
 				<?php endif; ?>
 				<p class="about__info about__text"><?php the_time('F j, Y'); ?></p>

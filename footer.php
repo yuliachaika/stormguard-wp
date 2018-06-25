@@ -4,38 +4,32 @@
  *
  * Contains the closing of the #content div and all content after.
  */
-$options = get_option( 'theme_settings' );
+
 ?>
-<footer class="footer">
+<footer class="footer" style="background: <?= get_field('background-color', 'option'); ?>">
 	<div class="container footer__container">
 		<div class="footer__left">
-			<p class="footer__text">
-
-				<?php if($options['footer']) { ?>
-				<p class="footer__text"><?php echo $options['footer']; ?>
-					<?php } else { ?>
-					<p class="footer__text">Copyright 2017. Storm Guard. All Rights Reserved. Website Produced by:&nbsp;
-						<?php } ?>
-						<a href="#" class="footer__link" target="_blank">Inverse Paradox</a>
+				<p class="footer__text"><?= get_field('copyright', 'option'); ?>&nbsp;
+					<a href="<?= get_field('copyright_link_url', 'option'); ?>" class="footer__link" target="_blank"><?= get_field('copyright_link', 'option'); ?></a>
 					</p>
 				</div>
 				<!-- /left -->
 				<div class="footer__right">
 					<ul class="footer__list">
 						<li class="footer__item">
-							<a href="<?php echo $options['footer_link_1']; ?>" target="_blank" class="footer__link">Customer Service</a>
+							<a href="<?= get_field('footer_link_url_1', 'option'); ?>" class="footer__link"><?= get_field('footer_link_1', 'option'); ?></a>
 						</li>
 						<li class="footer__item">
-							<a href="<?php echo $options['footer_link_2']; ?>" target="_blank" class="footer__link">Careers</a>
+							<a href="<?= get_field('footer_link_url_2', 'option'); ?>" class="footer__link"><?= get_field('footer_link_2', 'option'); ?></a>
 						</li>
 						<li class="footer__item">
-							<a href="<?php echo $options['footer_link_3']; ?>" target="_blank" class="footer__link">Terms &amp; Conditions</a>
+							<a href="<?= get_field('footer_link_url_3', 'option'); ?>" class="footer__link"><?= get_field('footer_link_3', 'option'); ?></a>
 						</li>
 						<li class="footer__item">
-							<a href="<?php echo $options['footer_link_4']; ?>" target="_blank" class="footer__link">Privacy Policy</a>
+							<a href="<?= get_field('footer_link_url_4', 'option'); ?>" class="footer__link"><?= get_field('footer_link_4', 'option'); ?></a>
 						</li>
 						<li class="footer__item">
-							<a href="<?php echo $options['footer_link_5']; ?>" target="_blank" class="footer__link">Sitemap</a>
+							<a href="<?= get_field('footer_link_url_5', 'option'); ?>" class="footer__link"><?= get_field('footer_link_5', 'option'); ?></a>
 						</li>
 					</ul>                   
 				</div>

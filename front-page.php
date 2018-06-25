@@ -13,8 +13,8 @@ $tname = 'front-page';
 	?>)">
 	<div class="hero__container container">
 		<div class="hero__content">
-			<p class="hero__text">Does Your Home or Property Have <span>Storm Damage</span> or <span>Need an Update</span>?</p>
-			<a href="<?php echo esc_url( home_url( '/contact' ));?>" class="hero__btn">Contact Us Today</a>
+			<?= get_field('hero_text', 22); ?>
+			<a href="<?= get_field('hero_link_url', 22); ?>" class="hero__btn"><?= get_field('hero_link', 22); ?></a>
 		</div>
 	</div>
 	<!-- /.container -->

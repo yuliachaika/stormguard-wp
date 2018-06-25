@@ -58,9 +58,8 @@ get_header();
 <section class="main-info">
 	<div class="container">
 		<div class="main-info__title title-text title-text--center">
-			<?php $category = get_category_by_slug('view-our-other-services')?>
-			<h2 class="title-text__title"><?= $category->name ?></h2>
-			<div class="title-text__text title-text__text--center"><?= $category->category_description ?></div>
+			<h2 class="title-text__title"><?= get_field('service_title', 'option'); ?></h2>
+			<div class="title-text__text title-text__text--center"><?= get_field('services_descr', 'option'); ?></div>
 		</div>
 		<!-- /.title-text -->	
 		<div class="main-info__content three-col-icon-info">
@@ -83,7 +82,7 @@ get_header();
 
 			</div>
 
-			<a class="three-col-icon-info__btn" href="<?php echo esc_url( home_url( '/services' ));?>">View All Services</a> 
+			<a class="three-col-icon-info__btn" href="<?php echo esc_url( home_url( '/services' ));?>"><?= get_field('services_btn', 'option'); ?></a> 
 		</div>
 
 	</div>

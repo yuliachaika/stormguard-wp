@@ -18,10 +18,10 @@ $options = get_option( 'theme_settings' );
 <body>
 
 	<header class="header">
-		<div class="header__top header-top">
+		<div class="header__top header-top" style="background: <?= get_field('background-color', 'option'); ?>">
 			<div class="header__container container">
 				<a href="<?php echo esc_url( home_url( '/locations' ));?>" class="header-top__link">
-					Find Your Local Storm Guard! 
+					<?= get_field('link_title', 'option'); ?>
 				</a>
 				<nav class="header-top__nav nav-top">
 					<?php

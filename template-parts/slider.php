@@ -1,28 +1,27 @@
 <?php
 /**
- * Template part for displaying slider section
- * Template post type: slider
+ * Template part for displaying review section
+ * Template post type: review
  */
 
 ?>
 <section class="main-slider slider">
 	<div class="container">
-		<h3 class="slider__title"><?php echo get_cat_name(6); ?></h3>
+		<h3 class="slider__title"><?= get_field('reviews_title', 'option'); ?></h3>
 		<div class="slider__wrap">
 
 
 			<?php 
 			$args = array(
-				'post_type' => 'slider',
+				'post_type' => 'review',
 				'publish' => true,
-				'paged' => get_query_var('paged'),
 				);
 
 			query_posts($args);
 
 			while(have_posts()){
 				the_post();
-				get_template_part( 'content/content-slides', get_post_type() );
+				get_template_part( 'content/content-reviews', get_post_type() );
 			}               
 			?>
 

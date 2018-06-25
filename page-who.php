@@ -45,7 +45,7 @@ get_header();
       </div>
       <div class="about__right">
         <h2 class="about__title"><?php the_title(); ?></h2>
-        <p class="about__text"><?php the_field('description'); ?></p>
+        <p class="about__text"><?php the_content(); ?></p>
       </div>
     </div>
   </div>

@@ -26,7 +26,7 @@
 			?>
 			
 		</div>
-		<a class="posts-block__btn" href="<?php echo esc_url( home_url( '/blog' ));?>">View More News</a> 
+		<a class="posts-block__btn" href="<?php echo esc_url( home_url( '/blog' ));?>"><?php the_field('news_btn', 22);  ?></a> 
 	</div>
 	<!-- /.container -->
 </section>

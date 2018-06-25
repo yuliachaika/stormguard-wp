@@ -41,7 +41,7 @@ get_header();
       <?php endif; ?>
     </div>
 
-    <p class="about__text"><?php the_field('content'); ?></p>
+    <p class="about__text"><?php the_content(); ?></p>
   </div>
   <!-- /.container -->
 </section>

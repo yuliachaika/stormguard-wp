@@ -1,7 +1,7 @@
 <?php
 /**
- * Template part for displaying slider
- * Template post type: slider
+ * Template part for displaying review
+ * Template post type: review
  */
 
 ?>
